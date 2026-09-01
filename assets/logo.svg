@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Prasham's development setup">
+  <rect width="512" height="512" rx="96" fill="#141414"/>
+  <defs>
+    <clipPath id="hex">
+      <polygon points="256,78 402,162 402,330 256,414 110,330 110,162"/>
+    </clipPath>
+  </defs>
+  <polygon points="256,78 402,162 402,330 256,414 110,330 110,162" fill="none" stroke="#3D4A2E" stroke-width="6"/>
+  <g clip-path="url(#hex)" stroke="#3D4A2E" stroke-width="2.5" fill="none" opacity="0.95">
+    <path d="M110 330 L256 250 L402 330"/>
+    <path d="M122 308 L256 236 L390 308"/>
+    <path d="M134 286 L256 222 L378 286"/>
+    <path d="M146 264 L256 208 L366 264"/>
+    <path d="M158 242 L256 194 L354 242"/>
+    <path d="M170 220 L256 180 L342 220"/>
+    <path d="M182 198 L256 166 L330 198"/>
+    <path d="M194 176 L256 152 L318 176"/>
+    <path d="M110 162 L256 250 L402 162"/>
+    <path d="M146 162 L256 250 L366 162"/>
+    <path d="M182 162 L256 250 L330 162"/>
+    <path d="M218 162 L256 250 L294 162"/>
+    <path d="M256 162 L256 250"/>
+  </g>
+  <path d="M238 312 L304 168 L348 196 Z" fill="#E8A317"/>
+  <line x1="238" y1="312" x2="214" y2="348" stroke="#E8A317" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="208" cy="360" r="16" fill="#F4E8C8"/>
+</svg>

@@ -23,6 +23,7 @@ Cloud Agents still clone **project** git, not your laptop `~/.cursor`. For Cloud
 ```text
 .cursor-plugin/plugin.json
 mcp.json
+assets/logo.svg  assets/logo.png
 rules/          commands/       hooks/          skills/
 sync.ts
 ```
