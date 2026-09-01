@@ -16,7 +16,7 @@ Cursor does **not** accept a zip upload. Plugins are **Git repositories**:
 
 Submit public listing at https://cursor.com/marketplace/publish after this repo is public.
 
-Cloud Agents still clone **project** git, not your laptop `~/.cursor`. For Cloud: add Memory Server / Kshetra as Team or personal MCP on [cursor.com/agents](https://cursor.com/agents), and/or `./sync.ts Cursor To Project` inside a product repo so `.cursor/skills` and `.cursor/rules` are committed there.
+Cloud Agents still clone **project** git, not your laptop `~/.cursor`. Prefer the shared GHCR base image — see [docs/cloud-agent-image.md](docs/cloud-agent-image.md) (`FROM ghcr.io/prashamtrivedi/cursor-dev-setup:<tag>`). Enable Memory Server / Kshetra / Parakh as Team or personal MCP on [cursor.com/agents](https://cursor.com/agents); the baked `mcp.json` in the image is reference only, not Cloud wiring. For local project vendoring, use `./sync.ts Cursor To Project`.
 
 ## Layout
 
