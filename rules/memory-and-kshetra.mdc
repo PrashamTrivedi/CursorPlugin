@@ -1,0 +1,11 @@
+---
+description: Use Memory Server and Kshetra MCP instead of guessing prior context or job/client state.
+alwaysApply: true
+---
+
+# Memory + Kshetra
+
+- Durable facts, decisions, and snippets go through **memory-server** MCP (`user-memory-server`). Search before adding duplicates.
+- Job hunt and client pipeline state lives in **kshetra**. Query the tracker before ingesting or recovering a row.
+- Never store secrets, bearer tokens, or LinkedIn cookies in memory or chat.
+- Never click final Submit/Apply on job applications; Prasham submits.

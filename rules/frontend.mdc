@@ -1,0 +1,11 @@
+---
+description: Distinctive frontend — load frontend-design / frontend-designer, not generic AI UI.
+globs: "**/*.{tsx,jsx,css,html,vue,svelte}"
+alwaysApply: false
+---
+
+# Frontend
+
+For new UI or restyles: load `frontend-design` (aesthetic) and `frontend-designer` (implementation). For Stitch screens: `taste-design` + `design-md` + the matching `stitch-*` skill. For component libraries: `shadcn-ui` / `react-components`.
+
+Avoid generic Inter/purple-gradient/card-grid slop. Pick one aesthetic and execute it.

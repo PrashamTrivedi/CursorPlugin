@@ -1,0 +1,29 @@
+{
+  "name": "prashams-development-setup",
+  "displayName": "Prasham's development setup.",
+  "version": "1.0.0",
+  "description": "Personal Cursor development setup: Memory Server and Kshetra MCP, Cloudflare Workers skills, frontend/Stitch design, hooks, commands, and local sync.",
+  "author": {
+    "name": "Prasham Trivedi",
+    "email": "me@prashamhtrivedi.in",
+    "url": "https://prashamhtrivedi.app"
+  },
+  "homepage": "https://github.com/PrashamTrivedi/CursorPlugin",
+  "repository": "https://github.com/PrashamTrivedi/CursorPlugin",
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "memory-server",
+    "kshetra",
+    "frontend",
+    "stitch",
+    "mcp",
+    "hooks"
+  ],
+  "skills": "skills/",
+  "rules": "rules/",
+  "commands": "commands/",
+  "hooks": "hooks/hooks.json",
+  "mcpServers": "mcp.json"
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "memory-server": {
+      "url": "https://memories-api.prashamhtrivedi.app/mcp"
+    },
+    "kshetra": {
+      "url": "https://kshetra.prashamhtrivedi.app/mcp"
+    },
+    "parakh": {
+      "url": "https://parakh.prashamhtrivedi.app/mcp"
+    }
+  }
+}

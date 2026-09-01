@@ -1,0 +1,11 @@
+---
+description: Cloudflare Workers, Wrangler, bindings, and MCP-on-Workers conventions.
+globs: wrangler.jsonc,wrangler.toml,**/workers*/**,**/*worker*.{ts,js,mjs}
+alwaysApply: false
+---
+
+# Cloudflare
+
+Load the `cloudflare` skill, then the product skill (`wrangler`, `durable-objects`, `workers-best-practices`, `agents-sdk`, etc.). Prefer Cloudflare docs MCP / `search_cloudflare_documentation` over baked-in limits and API shapes.
+
+Stack default: Hono on Workers, D1, KV, Wrangler. Use Bun when the repo already uses it.
