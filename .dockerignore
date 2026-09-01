@@ -1,0 +1,25 @@
+.git
+.github
+**/.git
+**/node_modules
+node_modules
+plans
+import-project-cursor
+hooks-state
+
+# Secrets and local overrides
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+.credentials.json
+*.local.json
+
+# Not needed in the runtime image
+assets/
+README.md
+docs/
+LICENSE
+sync.ts
+.cursor-plugin
