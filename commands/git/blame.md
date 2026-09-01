@@ -1,7 +1,7 @@
 ---
 allowed-tools: Bash(git:*), GitHub
 description: Intelligent git blame and history analysis for code investigation
-model: sonnet
+model: composer
 ---
 
 # Intelligent git blame and history analysis

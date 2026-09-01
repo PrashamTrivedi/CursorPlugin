@@ -14,6 +14,15 @@ description: Smart merge with intelligent conflict resolution and testing
 Merge $ARGUMENTS (source branch) into current branch with intelligent conflict
 resolution.
 
+## Grok supervises Composer
+
+Delegate to Task (`generalPurpose`, `model: composer-2.5-fast`): fetch, backup
+branch, merge attempt, tests after a clean merge.
+
+Parent keeps remaining conflicts, strategy choice, and any force-push decision.
+If Composer cannot resolve a conflict mechanically, it must stop and list
+hunks — do not invent a merge.
+
 ## Process
 
 1. Fetch latest changes from origin

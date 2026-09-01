@@ -50,6 +50,33 @@ In autonomous mode:
 
 - Task findings: @taskNotes/{ArgumentDirectoryName}/taskFindings.md
 
+## Grok supervises Composer
+
+Parent chat is the supervisor (Grok). Do **not** implement the whole task in
+the parent, and do **not** switch the parent to Composer.
+
+Composer can follow a written plan. It should not own branch strategy, scope
+changes, or the go/no-go after a checkpoint. That is why `/startWork` stays on
+Grok even though `/startWork-haiku` exists.
+
+For each checkpoint-sized slice, spawn Task:
+
+- `subagent_type`: `generalPurpose`
+- `model`: `composer-2.5-fast`
+- Prompt must include the `taskFindings.md` path, the files/acceptance for
+  **this slice only**, and: do not change the plan, do not expand scope, stop
+  when this slice is done.
+
+After the Task returns, supervisor MUST:
+
+1. Diff against `taskFindings.md` for this slice
+2. Reject and re-prompt Composer if off-plan — do not continue
+3. Run Checkpoint Validator, then Conventional Commit
+4. Next slice, or `/completeWork` when the plan is covered
+
+Keep in the parent (never Composer): missing-plan stop, branch strategy,
+resume from `currentCommitHash`, go/no-go, invoking `/completeWork`.
+
 ## Steps
 
 - Auto-detect if working directory is clean

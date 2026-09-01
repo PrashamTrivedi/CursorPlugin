@@ -5,6 +5,27 @@ description: Complete and finalize task work with validation and documentation u
 
 Confirm the code changes and documentation updates for a task
 
+## Grok supervises Composer
+
+Parent chat is the supervisor (Grok). Delegate mechanical close-out to Task
+(`generalPurpose`, `model: composer-2.5-fast`):
+
+- typecheck / test / lint and mechanical fixes to make them green
+- docs/changelog updates
+- walkthrough draft
+- running the **testcase** skill (write/update tests)
+
+Keep in the parent:
+
+- whether the diff satisfies `taskFindings.md`
+- review-loop stop / escalate (zero findings vs 5-pass / rising counts)
+- `/security-review` judgment
+- backend vs frontend next step
+- push / release recommendation
+
+If Composer reports green but the diff misses acceptance criteria, treat it as
+failed — do not ship on test green alone.
+
 ## Arguments
 
 - Directory Name: This is the name of the directory or task where

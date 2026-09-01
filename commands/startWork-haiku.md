@@ -1,10 +1,14 @@
 ---
 allowed-tools: Bash(git:*), FileSystem, Bash(npm:*), Bash(yarn:*), Bash(build:*), Bash(test:*), Read, Write, Edit, MultiEdit, Bash(ls:*), Bash(git:*), Bash(tree:*),Bash(grep:*), Bash(cat:*), Bash(find:*), Bash(gh:*)
 description: Start or continue working on a planned task with proper branch management
-model: haiku
+model: composer
 ---
 
 Start or continue working on a task.
+
+This is the **unsupervised** cheap path: implement the plan yourself. Use
+`/startWork` on Grok when you want Composer slices reviewed between
+checkpoints.
 
 ## Arguments provided by user in $ARGUMENTS
 

@@ -14,6 +14,13 @@ argument-hint: files | task description | github ticket id
 
 Understand the code and requirements and write test cases for them.
 
+## Grok supervises Composer
+
+Composer writes the tests (Task `generalPurpose`, `model: composer-2.5-fast`).
+Parent maps each new/changed test to Acceptance Criteria / Validation in
+`taskFindings.md` (or the given files). If a criterion has no new or changed
+test, reject the slice — a green suite on untouched files is not coverage.
+
 ## Arguments
 
 - Task and/or Github Ticket ID: This can be mix and match, user may provide both

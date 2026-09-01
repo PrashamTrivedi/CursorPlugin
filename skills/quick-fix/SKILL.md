@@ -7,7 +7,7 @@ disable-model-invocation: true
 ---
 allowed-tools: Bash,  Read, Write, Edit, MultiWrite, MultiEdit, Bash(gh:*)
 description: Direct implementation for trivial changes (complexity score 1). No planning, no documentation, just fix and verify. For CSS, text, config changes only.
-model: sonnet
+model: composer
 ---
 
 Execute immediate fix for trivial changes without planning overhead.

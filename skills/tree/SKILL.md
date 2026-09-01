@@ -7,10 +7,18 @@ disable-model-invocation: true
 ---
 allowed-tools: Bash(git:*), FileSystem, Bash(find:*), Bash(ls:*), Bash(cp:*), Bash(mkdir:*)
 description: Create, manage, and synchronize git worktrees with branch isolation
-model: sonnet
+model: composer
 ---
 
 # Create and manage git worktrees
+
+## Grok supervises Composer
+
+`create`, `status`, `push`, `clean` can run fully on Composer.
+
+For `merge` and `sync`: Composer does fetch/rebase/worktree commands. Parent
+(Grok) decides if a conflicted rebase is aborted or continued, and whether to
+merge to main.
 
 ## Context and Setup
 

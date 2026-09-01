@@ -1,13 +1,16 @@
 ---
 allowed-tools: Bash(git:*)
 description: Sync branch with main/master while preserving local commits safely
-model: sonnet
+model: composer
 ---
 
 # Sync branch with main/master
 
 Sync current branch with $ARGUMENTS (default: main) while preserving local
 commits.
+
+Composer does stash/fetch/rebase when the rebase is clean. Parent (Grok) owns
+conflicted rebase and any force-with-lease push.
 
 ## Process
 

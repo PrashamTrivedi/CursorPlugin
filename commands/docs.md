@@ -1,7 +1,7 @@
 ---
 allowed-tools: Bash(git:*), FileSystem, Bash(tree:*), Bash(ls:*), Bash(cat:*)
 description: Update documentation and changelog to reflect codebase changes
-model: sonnet
+model: composer
 ---
 
 Update the documentation to reflect the changes made in the codebase.

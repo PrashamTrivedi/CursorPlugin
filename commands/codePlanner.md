@@ -20,6 +20,18 @@ hooks:
 Understand the code and requirements we are working on. Supports single or
 multiple requirements with separate reports for each.
 
+## Grok supervises Composer
+
+Parent writes the plan. Composer may gather, not decide.
+
+Delegate Phase 1 and Step 3.2 (tree, git context, relevant file reads) to Task
+(`explore` or `generalPurpose`, `model: composer-2.5-fast`). Ask for a file map
+plus relevant excerpts — not a plan, not a complexity score.
+
+Parent keeps: requirement parsing, complexity score, architecture, acceptance
+criteria, Validation section, and writing `taskFindings.md`. Never let Composer
+write the plan file.
+
 ## Arguments
 
 - One or more requirements: Can be GitHub ticket IDs, task descriptions, or a
