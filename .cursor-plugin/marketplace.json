@@ -1,0 +1,17 @@
+{
+  "name": "prashams-development-setup",
+  "owner": {
+    "name": "Prasham Trivedi",
+    "email": "me@prashamhtrivedi.in"
+  },
+  "metadata": {
+    "description": "Prasham's Cursor development setup"
+  },
+  "plugins": [
+    {
+      "name": "prashams-development-setup",
+      "source": "./",
+      "description": "Personal Cursor development setup: Memory Server and Kshetra MCP, Cloudflare Workers skills, frontend/Stitch design, hooks, commands, and local sync."
+    }
+  ]
+}
