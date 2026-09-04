@@ -9,7 +9,8 @@ Image: `ghcr.io/prashamtrivedi/cursor-dev-setup:<tag>`
 | Content | Path | Notes |
 |---|---|---|
 | Skills | `/home/ubuntu/.cursor/skills/` | Symlink or rsync from `/opt/prasham-cursor/skills` |
-| Commands | `/home/ubuntu/.cursor/commands/` | Symlink or rsync from `/opt/prasham-cursor/commands` |
+| Commands (user) | `/home/ubuntu/.cursor/commands/` | Present, but Cloud Agents do **not** load slash commands from `$HOME` |
+| Commands (project) | `<repo>/.cursor/commands/` | Symlink to `/opt/prasham-cursor/commands` — this is what Cloud scans |
 | Hook scripts | `/opt/prasham-cursor/hooks/` | Executable; Bun + Node installed |
 | Fallback copies | `/opt/prasham-cursor/{skills,commands,rules,mcp.json}` | Stable reference paths |
 | Materialize helper | `/opt/prasham-cursor/bin/materialize-cursor-harness.sh` | Idempotent; safe in `install` |
@@ -66,7 +67,15 @@ FROM ghcr.io/prashamtrivedi/cursor-dev-setup:v1.0.0
 }
 ```
 
-Adjust `install` / `start` for the product (pnpm, wrangler, Flutter in mobile env, etc.). Keep `materialize-cursor-harness.sh` first so `~/.cursor/{skills,commands}` exist even if the home volume was reset.
+Adjust `install` / `start` for the product (pnpm, wrangler, Flutter in mobile env, etc.). Keep `materialize-cursor-harness.sh` first so `~/.cursor/skills` and **project** `.cursor/commands` exist even if the home volume was reset.
+
+Cloud Agents load **skills** from `~/.cursor/skills` (baked) and **slash commands** from the repo `.cursor/commands/` (not `$HOME`). The materialize script links both. Until the image tag includes that script, add this after materialize (idempotent):
+
+```bash
+mkdir -p .cursor && ln -sfn /opt/prasham-cursor/commands .cursor/commands
+```
+
+Invoke harness workflows as `/startWork` once project commands are linked. Skills remain `/startwork` (lowercase). Do not commit the symlink — materialize adds it to `.git/info/exclude`.
 
 ## Hooks on Cloud Agents
 
