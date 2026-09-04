@@ -3,33 +3,33 @@
   "hooks": {
     "sessionStart": [
       {
-        "command": "./hooks/session-start.ts"
+        "command": "bun ./hooks/session-start.ts"
       }
     ],
     "sessionEnd": [
       {
-        "command": "./hooks/session-end.ts"
+        "command": "bun ./hooks/session-end.ts"
       }
     ],
     "stop": [
       {
-        "command": "./hooks/session-end.ts"
+        "command": "bun ./hooks/session-end.ts"
       }
     ],
     "preToolUse": [
       {
-        "command": "./hooks/pre-tool-use.ts"
+        "command": "bun ./hooks/pre-tool-use.ts"
       }
     ],
     "beforeShellExecution": [
       {
-        "command": "./hooks/pre-tool-use.ts"
+        "command": "bun ./hooks/pre-tool-use.ts"
       },
       {
-        "command": "./hooks/shell-pi.ts"
+        "command": "bun ./hooks/shell-pi.ts"
       },
       {
-        "command": "./hooks/shell-playwright.ts"
+        "command": "bun ./hooks/shell-playwright.ts"
       },
       {
         "type": "prompt",
@@ -39,12 +39,12 @@
     ],
     "beforeMCPExecution": [
       {
-        "command": "./hooks/mcp-parakh.ts"
+        "command": "bun ./hooks/mcp-parakh.ts"
       }
     ],
     "postToolUse": [
       {
-        "command": "./hooks/nested-claude-md.ts",
+        "command": "bun ./hooks/nested-claude-md.ts",
         "matcher": "Read|Write|StrReplace|Grep|Glob"
       }
     ],
