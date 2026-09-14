@@ -27,7 +27,7 @@ specs.
 
 - Use agents to find online about some ideas user discuss.
 
-- Once you have raw idea, use AskUserQuestionTool to ask the user to help
+- Once you have raw idea, use the `AskQuestion` tool to ask the user to help
   determining the final scope.
 
 - Use the answer to add it into your understanding.

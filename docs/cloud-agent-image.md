@@ -28,8 +28,8 @@ Dockerfile path: **`Dockerfile`** (repo root).
 docker build -t ghcr.io/prashamtrivedi/cursor-dev-setup:local .
 
 # Tag releases as cursor-dev-setup-vX.Y.Z (CI strips prefix for image tag)
-git tag cursor-dev-setup-v1.0.0
-git push origin cursor-dev-setup-v1.0.0
+git tag cursor-dev-setup-v1.1.0
+git push origin cursor-dev-setup-v1.1.0
 ```
 
 CI (`.github/workflows/publish-ghcr.yml`) builds on tag `cursor-dev-setup-v*` or manual dispatch, pushes `:vX.Y.Z` and `:latest` using `GITHUB_TOKEN` with `packages: write`.
@@ -38,8 +38,8 @@ Local push (needs `write:packages` PAT or `gh auth login`):
 
 ```bash
 echo "$GITHUB_TOKEN" | docker login ghcr.io -u USERNAME --password-stdin
-docker tag ghcr.io/prashamtrivedi/cursor-dev-setup:local ghcr.io/prashamtrivedi/cursor-dev-setup:v1.0.0
-docker push ghcr.io/prashamtrivedi/cursor-dev-setup:v1.0.0
+docker tag ghcr.io/prashamtrivedi/cursor-dev-setup:local ghcr.io/prashamtrivedi/cursor-dev-setup:v1.1.0
+docker push ghcr.io/prashamtrivedi/cursor-dev-setup:v1.1.0
 docker push ghcr.io/prashamtrivedi/cursor-dev-setup:latest
 ```
 
@@ -50,7 +50,7 @@ If the GHCR package is private, add a Cursor **build secret** (environment dashb
 ## Consumer repo: `.cursor/Dockerfile`
 
 ```dockerfile
-FROM ghcr.io/prashamtrivedi/cursor-dev-setup:v1.0.0
+FROM ghcr.io/prashamtrivedi/cursor-dev-setup:v1.1.0
 # App deps only — no skills/commands/hooks copied here
 ```
 
