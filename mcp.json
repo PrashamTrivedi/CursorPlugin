@@ -8,6 +8,12 @@
     },
     "parakh": {
       "url": "https://parakh.prashamhtrivedi.app/mcp"
+    },
+    "jev-tools": {
+      "command": "bun",
+      "args": [
+        "${env:HOME}/.cursor/skills/jev-harness/mcp/server.ts"
+      ]
     }
   }
 }

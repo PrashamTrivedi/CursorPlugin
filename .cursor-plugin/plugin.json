@@ -2,7 +2,7 @@
   "name": "prashams-development-setup",
   "displayName": "Prasham's development setup.",
   "version": "1.0.0",
-  "description": "Personal Cursor development setup: Memory Server and Kshetra MCP, TypeSafe AI skill, Cloudflare Workers skills, frontend/Stitch design, hooks, commands, and local sync.",
+  "description": "Personal Cursor development setup: Memory Server and Kshetra MCP, TypeSafe AI skill, jev-harness Jev hooks, Cloudflare Workers skills, frontend/Stitch design, hooks, commands, and local sync.",
   "author": {
     "name": "Prasham Trivedi",
     "email": "me@prashamhtrivedi.in",
@@ -23,7 +23,8 @@
     "hooks",
     "typesafe",
     "system-one",
-    "jev"
+    "jev",
+    "jev-harness"
   ],
   "skills": "skills/",
   "rules": "rules/",

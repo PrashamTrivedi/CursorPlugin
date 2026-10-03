@@ -14,11 +14,21 @@
     "stop": [
       {
         "command": "bun ./hooks/session-end.ts"
+      },
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts stop",
+        "timeout": 15,
+        "loop_limit": 1
       }
     ],
     "preToolUse": [
       {
         "command": "bun ./hooks/pre-tool-use.ts"
+      },
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts preToolUse",
+        "timeout": 15,
+        "matcher": "Read|Write|StrReplace|Task|MCP:browser_.*"
       }
     ],
     "beforeShellExecution": [
@@ -32,28 +42,53 @@
         "command": "bun ./hooks/shell-playwright.ts"
       },
       {
-        "type": "prompt",
-        "timeout": 10,
-        "prompt": "You are a safety reviewer for a developer's CLI. Analyze this shell command.\n\nCommand context: $ARGUMENTS\n\nRules:\n1. If the description/intent is clearly deploying, migrating, pushing, or releasing, TRUST IT and return {ok: true}.\n2. Only return {ok: false} for ACCIDENTALLY destructive commands (description does not match a dangerous side effect, or there is no description and the command is risky).\n3. Always allow: git push (including remote/branch), deploy, wrangler (deploy/migrate/publish/tail/dev), npm/bun publish, docker push, terraform apply.\n4. Block: rm -rf with broad paths, dropping databases without backup mention, commands that leak secrets to stdout, force push without --force-with-lease.\n5. When in doubt, return {ok: true}.\n\nReturn {ok: true} unless the command is genuinely accidental/destructive AND the description does not justify it."
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts beforeShellExecution",
+        "timeout": 15
       }
     ],
     "beforeMCPExecution": [
       {
         "command": "bun ./hooks/mcp-parakh.ts"
+      },
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts beforeMCPExecution",
+        "timeout": 15
       }
     ],
     "postToolUse": [
       {
         "command": "bun ./hooks/nested-claude-md.ts",
         "matcher": "Read|Write|StrReplace|Grep|Glob"
+      },
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts postToolUse",
+        "timeout": 15,
+        "matcher": "Shell|Read|Write|StrReplace|WebFetch|MCP:.*"
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts beforeSubmitPrompt",
+        "timeout": 15
       }
     ],
     "postToolUseFailure": [
       {
-        "matcher": "Shell",
-        "type": "prompt",
-        "timeout": 10,
-        "prompt": "A shell command just failed. Classify it concisely:\n- MISSING_DEP: needs install (npm, apt, brew)\n- PERMISSION: needs sudo or chmod\n- NOT_FOUND: wrong path or command name\n- PORT_CONFLICT: port already in use\n- SYNTAX: shell syntax error\n- OTHER: anything else\n\nContext: $ARGUMENTS\n\nAlways return {ok: true}. Put the classification and one-line fix suggestion in the reason field."
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts postToolUseFailure",
+        "timeout": 15,
+        "matcher": "Shell"
+      }
+    ],
+    "afterAgentResponse": [
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts afterAgentResponse",
+        "timeout": 15
+      }
+    ],
+    "subagentStart": [
+      {
+        "command": "bun ./skills/jev-harness/adapters/cursor/run.ts subagentStart",
+        "timeout": 15
       }
     ]
   }
